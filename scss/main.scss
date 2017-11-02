@@ -1,0 +1,255 @@
+@font-face {
+        font-family: 'Proxima';
+        src: url('../fonts/proxima-nova.otf');
+    }
+
+html{
+    
+    body{
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', sans-serif;
+        overflow-x: hidden;
+
+        .container{
+            background-color: #fff;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: url('../images/pic3.gif');
+            background-size: cover;
+            
+            .buttons-container{
+                display: flex;
+                width: 50%;
+                justify-content: space-around;
+                margin-top: 20px;
+                
+                
+                a{
+                    display: table;
+                    text-decoration: none;
+                    color: #000;
+                    text-transform: uppercase;
+                    padding: 10px 20px;
+                    color: #fff;
+                    border: 1px solid #fff;
+                    margin-bottom: 10px;
+                    transition: all .3s ease;
+                    
+                    
+                    &:hover{
+                        background: #fff;
+                        color: #017FD3;
+                    }
+                }
+            }
+        
+            
+            .cube-container{
+                width: 500px;
+                height: 500px;
+                perspective: 3000px;
+                position: absolute;
+                top: 60%;
+                left: 50%;
+                
+                        
+                
+                .show-back{
+                            transform: translateZ(0) rotateY(180deg); 
+                        }
+                
+                .show-front{
+                            transform: translateZ(0) rotateY(0deg); 
+                        }
+                    
+                    .show-right{
+                            transform: translateZ(0) rotateY(-90deg);
+                        }
+                    
+                         .show-left{
+                            transform: translateZ(0) rotateY(90deg); 
+                        }
+                    
+                         .show-top{
+                            transform: translateZ(0) rotateX(-90deg); 
+                        }
+                    
+                         .show-bottom{
+                            transform: translateZ(0) rotateX(90deg); 
+                        }
+                
+                #cube{
+                    width: 500px;
+                    height: 500px;;
+                    position: relative;
+                    margin-left: -250px;
+                    margin-top: -250px;
+                    transform-style: preserve-3d;
+                    transition: transform 1s ease;
+                    
+                    
+                    div{
+                        position: absolute;
+                        height: 500px;
+                        width: 500px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                       
+
+                        
+                    }
+                    
+                    #front{
+                        transform: translateZ(250px);
+                        flex-wrap: wrap;
+                        flex-direction: column;
+                        font-family: 'Proxima';
+                        text-transform: uppercase;
+                        background: url('../images/trip6.gif') 20px 150px;
+                        background-size: cover;
+                    }
+                    
+                    #back{
+                        transform: rotateY(180deg) translateZ(250px);
+                        background: url('../images/trip1.gif');
+                    }
+                    
+                    .cube-info{
+                        
+                        .first-circle{
+                            position: absolute;
+                            width: 50%;
+                            height: 50%;
+                            top: 10%;
+                            left: 50%;
+                            transform: translate(-50%, 0);
+                            
+                            
+                            svg{
+                                width: 100%;
+                                height: 100%;
+                                display: block;
+                                margin: auto;
+
+                            }
+                            
+                            .second-circle{
+                                width: 50%;
+                                height: 50%;
+                                border-radius: 50%;
+                                background: #FBFCFE;
+                                
+                                i{
+                                    font-size: 50px;
+                                    color: #017FD3;
+                                }
+                            }
+                        }
+                        
+                        
+                        .info{
+                            height: 50%;
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            display: flex;
+                            flex-wrap: wrap;
+
+                            
+                            p{
+                                display: block;
+                                z-index: 2;
+                                margin: 100px auto 0 auto;
+                                padding: 0;
+                                width: 80%;
+                                text-transform: uppercase;
+                            }
+                            
+                            
+                            .btn-cube {
+                                background: linear-gradient(to right, #75CEF6, #017FD3);
+                                border-radius: 25px;
+                                box-sizing: border-box;
+                                color: #017FD3;
+                                display: block;
+                                height: 50px;
+                                letter-spacing: 1px;
+                                margin: 0 auto;
+                                padding: 4px;
+                                position: relative;
+                                text-decoration: none;
+                                text-transform: uppercase;
+                                width: 150px;
+                                z-index: 2;
+                                align-self: flex-end;
+                                margin: auto;
+                                margin-top: 0;
+                                
+
+                                &:hover {
+                                    color: #fff;
+                                }
+
+                            span {
+                                align-items: center;
+                                background: #fff;
+                                border-radius: 25px;
+                                display: flex;
+                                justify-content: center;
+                                height: 100%;
+                                transition: background .3s ease;
+                                width: 100%;
+                            }
+
+                            &:hover span {
+                                background: transparent;
+                            }
+                            }
+                            
+                            svg{
+                                position: absolute;
+                                bottom: 0;
+                                letf: 0;
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+
+                    }
+                    
+                    #right{
+                        transform: rotateY(90deg); 
+                        margin-left: 250px;
+                        background: url('../images/trip2.gif');
+                    }
+                    
+                    #left{
+                        transform: rotateY(-90deg);
+                        margin-left: -250px;
+                        background: url('../images/trip3.gif');
+                    }
+                    
+                    #top{
+                        transform: rotateX(90deg);
+                        margin-top: -250px;
+                        background: url('../images/trip4.gif');
+                    }
+                        
+                    #bottom{
+                        transform: rotateX(-90deg);
+                        margin-top: 250px;
+                        background: url('../images/trip5.gif');
+                    }
+                }
+            }
+            
+        }
+
+    }
+}
